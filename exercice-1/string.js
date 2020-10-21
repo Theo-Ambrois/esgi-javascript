@@ -9,7 +9,10 @@ function capitalize(string) {
     if (typeof string !== "string" || string === "")
     	return "";	
 
-    return string.split(" ").map((word) => ucfirst(word.toLowerCase())).join(' ');
+    return string
+    .split(" ")
+    .map((word) => ucfirst(word.toLowerCase()))
+    .join(" ");
 }
 
 function camelCase(string) {
