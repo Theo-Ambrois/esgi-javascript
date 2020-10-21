@@ -19,7 +19,7 @@ function camelCase(string) {
     if (typeof string !== "string" || string === "")
     	return "";
 
-    return capitalize(string).split(" ").join("");
+    return capitalize(string).split(" ", "_", "-").join("");
 }
 
 console.log(camelCase("salut ca va"));
@@ -33,7 +33,25 @@ function snake_case(string) {
 
 }
 
+function leet(string) {
+    return string.replace(/[aeiouy]/gi, function (e) {
 
+    switch (e.toLowerCase()) {
+    	case "a":
+    		return 4;
+    	case "e":
+    		return 3;
+    	case "i":
+    		return 1;
+    	case "o":
+    		return 0;
+    	case "u":
+    		return "(_)";
+    	case "y":
+    		return 7;
+    }
+	});
+}
 
 function verlan(string){
     if (typeof string !== "string" || string === "")
